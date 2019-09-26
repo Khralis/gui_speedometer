@@ -1,0 +1,89 @@
+@font-face {
+  font-family: digital;
+  src: url("digital.ttf");
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.speedometer {
+  border-radius: 5%;
+  width: 200px;
+  height: 150px;
+  background-image: url("background.png");
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 3px solid gray;
+}
+
+p {
+  margin: 0 auto;
+  font-family: digital;
+}
+
+#container {
+  min-height: 100%;
+}
+
+#speedcontainer {
+  position: absolute;
+  bottom: 215px;
+  right: 35px;
+}
+
+.sL1 {
+  position: absolute;
+  bottom: 60px;
+  right: 75px;
+  color: var(--main-bg-color);
+  font-size: 80px;
+}
+
+.sL2 {
+  position: absolute;
+  bottom: 9px;
+  right: 63px;
+  color: var(--main-bg-color);
+  font-size: 36px;
+}
+
+.uL2 {
+  position: absolute;
+  bottom: 14px;
+  right: 1px;
+  color: var(--main-bg-color);
+  font-size: 30px;
+}
+
+.uL1 {
+  position: absolute;
+  bottom: 114px;
+  right: 1px;
+  color: var(--main-bg-color);
+  font-size: 36px;
+}
+
+.dBL1 {
+  position: absolute;
+  bottom: 14px;
+  right: 1px;
+  color: var(--main-bg-color);
+  font-size: 72px;
+}
+
+.dBL2 {
+  position: absolute;
+  bottom: 25px;
+  right: 1px;
+  color: var(--main-bg-color);
+  font-size: 72px;
+}
+
+.dBL3 {
+  position: absolute;
+  bottom: 25px;
+  right: 1px;
+  color: var(--main-bg-color);
+  font-size: 72px;
+}
