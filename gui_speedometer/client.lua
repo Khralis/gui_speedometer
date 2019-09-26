@@ -1,9 +1,8 @@
-local show_hud = true;
-
+local show_hud = true
 Citizen.CreateThread(function()
   while true do
   Wait(1)
-  if IsControlJustPressed(1, 305) then
+  if IsControlJustPressed(1, hide_speedo) then
     if show_hud then
       show_hud = false
     else
@@ -11,7 +10,7 @@ Citizen.CreateThread(function()
       end end
       playerPed = GetPlayerPed(-1)
       if playerPed then
-        playerCar = GetVehiclePedIsIn(playerPed, false)
+        playerCar = GetVehiclePedIsUsing(playerPed)
         if playerCar and GetPedInVehicleSeat(playerCar, - 1) == playerPed then
           carSpeed = GetEntitySpeed(playerCar)
           if (carSpeed > 0.0) and show_hud then
@@ -21,18 +20,26 @@ Citizen.CreateThread(function()
             mph = math.ceil(carSpeed * 2.236936)
             kmh = math.ceil(carSpeed * 3.6)
             SendNUIMessage({
-              showhud = true,
-              dBL1 = mph,
-              dBL2 = kmh,
-              dBL3 = ms,
+              show_debug = show_debug,
+              ussc = use_solid_speed_color,
+              usuc = use_solid_unit_color,
+              dBL1 = hash,
+              dBL2 = ms,
+              dBL3 = mph,
+              dBL4 = kmh,
               uL1 = "MPH",
               uL2 = "KM/H",
               mph = mph,
               kmh = kmh,
               ms = ms,
+              speedColorMPH = speedColorMPH,
+              speedColorKMH = speedColorKMH,
+              unitColorMPH = unitColorMPH,
+              unitColorKMH = unitColorKMH,
+              show_hud = true,
             })
           else
-            SendNUIMessage({showhud = false})
+            SendNUIMessage({show_hud = false})
           end
         end
       end

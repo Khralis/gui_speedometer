@@ -8,15 +8,6 @@ html, body {
   margin: 0;
 }
 
-.speedometer {
-  border-radius: 5%;
-  width: 200px;
-  height: 150px;
-  background-image: url("background.png");
-  background-color: rgba(0, 0, 0, 0.85);
-  border: 3px solid gray;
-}
-
 p {
   margin: 0 auto;
   font-family: digital;
@@ -30,6 +21,15 @@ p {
   position: absolute;
   bottom: 215px;
   right: 35px;
+}
+
+.speedometer {
+  border-radius: 5%;
+  width: 200px;
+  height: 150px;
+  background-image: url("background.png");
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 3px solid gray;
 }
 
 .sL1 {
@@ -66,24 +66,32 @@ p {
 
 .dBL1 {
   position: absolute;
-  bottom: 14px;
+  bottom: 800px;
   right: 1px;
-  color: var(--main-bg-color);
-  font-size: 72px;
+  color: white;
+  font-size: 36px;
 }
 
 .dBL2 {
   position: absolute;
-  bottom: 25px;
+  bottom: 700px;
   right: 1px;
-  color: var(--main-bg-color);
-  font-size: 72px;
+  color: white;
+  font-size: 36px;
 }
 
 .dBL3 {
   position: absolute;
-  bottom: 25px;
+  bottom: 600px;
   right: 1px;
-  color: var(--main-bg-color);
-  font-size: 72px;
+  color: white;
+  font-size: 36px;
+}
+
+.dBL4 {
+  position: absolute;
+  bottom: 500px;
+  right: 1px;
+  color: white;
+  font-size: 36px;
 }
