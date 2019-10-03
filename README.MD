@@ -8,3 +8,6 @@ Simple speedometer resource for fivem
 2.) Use your server.cfg or console to start it "start gui_speedometer"
 
 Edit the config.lua to configure colors and hide keybind
+
+Added Toggleable autohide
+Do note: if autohide is enabled it cancels out the hotkey hide may change this later so that the hot key overrides autohide.
