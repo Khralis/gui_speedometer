@@ -15,8 +15,8 @@ Citizen.CreateThread(function()
           carSpeed = GetEntitySpeed(playerCar)
           hash = GetEntityModel(playerCar)
           speed = GetVehicleMaxSpeed(hash)
-          ms = (speed * 2.23693629)
-          mph = math.ceil(carSpeed * 2.236936)
+          ms = math.ceil(speed * 2.23693629)
+          mph = math.ceil(carSpeed * 2.23693629)
           kmh = math.ceil(carSpeed * 3.6)
           if auto_hide and (carSpeed > 0.0) then
             show_hud = true
