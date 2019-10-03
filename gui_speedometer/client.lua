@@ -10,38 +10,49 @@ Citizen.CreateThread(function()
       end end
       playerPed = GetPlayerPed(-1)
       if playerPed then
-        playerCar = GetVehiclePedIsUsing(playerPed)
+        playerCar = GetVehiclePedIsIn(playerPed, false)
         if playerCar and GetPedInVehicleSeat(playerCar, - 1) == playerPed then
           carSpeed = GetEntitySpeed(playerCar)
-          if (carSpeed > 0.0) and show_hud then
-            hash = GetEntityModel(playerCar)
-            speed = GetVehicleMaxSpeed(hash)
-            ms = (speed * 2.23693629)
-            mph = math.ceil(carSpeed * 2.236936)
-            kmh = math.ceil(carSpeed * 3.6)
-            SendNUIMessage({
-              show_debug = show_debug,
-              ussc = use_solid_speed_color,
-              usuc = use_solid_unit_color,
-              dBL1 = hash,
-              dBL2 = ms,
-              dBL3 = mph,
-              dBL4 = kmh,
-              uL1 = "MPH",
-              uL2 = "KM/H",
-              mph = mph,
-              kmh = kmh,
-              ms = ms,
-              speedColorMPH = speedColorMPH,
-              speedColorKMH = speedColorKMH,
-              unitColorMPH = unitColorMPH,
-              unitColorKMH = unitColorKMH,
-              show_hud = true,
-            })
+          hash = GetEntityModel(playerCar)
+          speed = GetVehicleMaxSpeed(hash)
+          ms = (speed * 2.23693629)
+          mph = math.ceil(carSpeed * 2.236936)
+          kmh = math.ceil(carSpeed * 3.6)
+          if auto_hide and (carSpeed > 0.0) then
+            show_hud = true
           else
-            SendNUIMessage({show_hud = false})
+            show_hud = false
+            if not auto_hide and not show_hud then
+              show_hud = true
+              end end
+              SendNUIMessage({
+                show_hud = show_hud,
+                show_debug = show_debug,
+                ussc = use_solid_speed_color,
+                usuc = use_solid_unit_color,
+                dBL1 = hash,
+                dBL2 = ms,
+                dBL3 = mph,
+                dBL4 = kmh,
+                uL1 = "MPH",
+                uL2 = "KM/H",
+                mph = mph,
+                kmh = kmh,
+                ms = ms,
+                speedColorMPH = speedColorMPH,
+                speedColorKMH = speedColorKMH,
+                unitColorMPH = unitColorMPH,
+                unitColorKMH = unitColorKMH,
+              })
+            else
+              SendNUIMessage({
+                show_hud = false,
+                show_debug = show_debug,
+                mph = 0,
+                kmh = 0,
+                ms = 0,
+              })
+            end
           end
         end
-      end
-    end
-  end)
+      end)
