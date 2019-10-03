@@ -11,3 +11,4 @@ unitColorKMH = {0, 204, 255}
 
 --- Assign Hide Keybind
 hide_speedo = 305 --- List of keybinds here https://docs.fivem.net/game-references/controls/
+auto_hide = false --- Should the Speedo Hide automatically at zero speed?
