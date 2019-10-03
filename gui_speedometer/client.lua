@@ -48,9 +48,6 @@ Citizen.CreateThread(function()
               SendNUIMessage({
                 show_hud = false,
                 show_debug = show_debug,
-                mph = 0,
-                kmh = 0,
-                ms = 0,
               })
             end
           end
