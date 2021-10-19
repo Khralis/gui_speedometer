@@ -14,7 +14,7 @@ Citizen.CreateThread(function()
         if playerCar and GetPedInVehicleSeat(playerCar, - 1) == playerPed then
           carSpeed = GetEntitySpeed(playerCar)
           hash = GetEntityModel(playerCar)
-          speed = GetVehicleModelEstimatedMaxSpeed(playerCar)
+          speed = GetVehicleModelEstimatedMaxSpeed(hash)
           ms = math.ceil(speed * 2.23693629)
           mph = math.ceil(carSpeed * 2.23693629)
           kmh = math.ceil(carSpeed * 3.6)
